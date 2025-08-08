@@ -5,6 +5,7 @@ import ResponsiveNav from "@/components/Home/Navbar/ResponsiveNav";
 import Footer from "@/components/Home/Footer/Footer";
 
 import "./globals.css";
+import { Providers } from "./providers";
 
 const customFont = Rajdhani({
   weight: ["300", "400", "500", "600", "700"],
@@ -24,9 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${customFont.className} antialiased`}>
-        <ResponsiveNav />
-        {children}
-        <Footer />
+        <Providers>
+          <ResponsiveNav />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
